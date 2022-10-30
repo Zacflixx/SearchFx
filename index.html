@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    />
+    <style>
+      :root {
+        --font-family-vodafone_lt-regular: "Vodafone Lt-Regular";
+        --font-family-vodafone_rg-bold: "Vodafone Rg-Bold";
+        --font-family-vodafone_rg-regular: "Vodafone Rg-Regular";
+      }
+      .flagsSection {
+        background-color: #f4f4f4;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        font-family: "Vodafone Rg";
+      }
+      img {
+        width: 100%;
+        height: 80%;
+        /* width: 28px;
+                display: inline;
+                vertical-align: middle;
+                padding: 0;
+                margin-right: 20px;  */
+      }
+      .Top_Txt1 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #333 !important;
+        width: 100%;
+      }
+      .market {
+        text-align: left !important;
+      }
+      .continent {
+        text-align: left !important;
+        font-size: 1.4rem;
+        margin-top: 0rem;
+      }
+      .container1 {
+        position: relative;
+        width: 95%;
+        margin: 0px auto;
+      }
+      .search_Box1 {
+        /* background: #f8f8f8; */
+        border: 1px solid rgba(0, 0, 0, 0.107);
+        box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.112);
+        border-radius: 5px;
+        border: 1px solid rgba(51, 51, 51, 0.317);
+        font-size: 17px;
+        padding: 8px 25px;
+        font-family: "Vodafone rg";
+        letter-spacing: 1.6px;
+        position: absolute;
+        width: 30%;
+        top: -5rem;
+        right: 0rem;
+        height: 2.5rem;
+      }
+      @media (max-width: 768px) {
+        .search_Box1 {
+          width: 100%;
+        }
+      }
+      ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        opacity: 0.7; /* Firefox */
+      }
+
+      :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+      }
+
+      ::-ms-input-placeholder {
+        /* Microsoft Edge */
+      }
+      .card-lists {
+        margin-top: 7rem;
+      }
+      .card {
+        width: 17rem;
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 0px;
+        margin: 15px 12px;
+        height: 13rem;
+      }
+      .card-body {
+      }
+      .card-icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-left: 1.4rem;
+      }
+      .card-title {
+        font-weight: 500;
+        font-size: 1.4rem;
+      }
+      .VF_Txt1 {
+        font-size: 20px;
+        line-height: 24px;
+        font-family: "Vodafone Rg";
+        width: 90%;
+
+        color: #333333d3;
+      }
+      .Lower_Half {
+        display: flex;
+        flex: 100%;
+        align-items: center;
+      }
+      .lh1 {
+        flex: 10%;
+        width: 2.8rem;
+        height: 2.8rem;
+        border: rgba(32, 30, 30, 0.162) solid 2px;
+        border-radius: 50%;
+      }
+      .lh2 {
+        margin-left: 10%;
+        flex: 60%;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+      }
+      .row {
+        background-color: rgba(178, 178, 178, 0.041);
+        margin-top: -1.3rem;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      @media (max-width: 768px) {
+        .Top_Txt1 {
+          font-size: 1.3rem;
+        }
+        .row {
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 610px) {
+        .card {
+          width: 90%;
+          border-radius: 10px;
+          background: #ffffff;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+          border-radius: 0px;
+          margin: 15px 12px;
+          height: auto;
+        }
+        .lh1 {
+          flex: none;
+          width: 3rem;
+          height: 2.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flagsSection">
+      <h1 class="text-white text-center p-4 Top_Txt1">
+        Vodafone Group connects millions of roamers and devices in virtually
+        every country every day. Need Support with your connection?
+      </h1>
+
+      <div class="container1">
+        <div class="input-filter">
+          <input
+            type="text"
+            id="filter"
+            class="filter search_Box1"
+            placeholder="Search Countries"
+            onkeyup="SearchCountry()"
+          />
+        </div>
+
+        <div class="card-lists" id="card-lists">
+          <h1 class="text-white text-center p-4 Top_Txt1 market" id="label">
+            Local Markets
+          </h1>
+          <h1 class="text-white text-center p-4 Top_Txt1 continent" id="label2">
+            Africa
+          </h1>
+          <div class="row" id="row0">
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">DR Congo</h5>
+                  <a target="_blank" href="https://www.vodacom.cd/particulier/nos-offres/international/communiquer-vers-linternational">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_congo-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 1111 or Call +243811111</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Egypt</h5>
+                  <a target="_blank" href="https://web.vodafone.com.eg/ar/roamingmanagement">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_eg-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +201001888888</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Ghana</h5>
+                  <a target="_blank" href="https://support.vodafone.com.gh/help/roaming/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_gh-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +233302200200</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Kenya</h5>
+                  <a target="_blank" href="https://roaming.safaricom.co.ke/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Associate</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ke-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">
+                    PrePay: Call 100 (Free) Or +254 722 002100, PostPay: 200
+                    (Free) Or +254 722 002200
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Lesotho</h5>
+                  <a target="_blank" href="https://www.vodacom.co.za/vodacom/shopping/v/vodafone-world">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_lt-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 114, For Prepaid, Call 1182</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Mozambique</h5>
+                  <a target="_blank" href="https://www.vm.co.mz/en/Business2/Solucoes-Moveis/Tariffs-Roaming/Roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_mz-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +258 84 111 0000</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">South Africa</h5>
+                  <a target="_blank" href="https://www.vodacombusiness.co.za/business/solutions/mobile-and-voice/international-roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_sf-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 082 1940</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Tanzania</h5>
+                  <a target="_blank" href="https://vodacom.co.tz/international-roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_tz-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +255754705000</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+
+          <h1 class="text-white text-center p-4 Top_Txt1 continent" id="label3">
+            Asia
+          </h1>
+
+          <div class="row" id="row1">
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">India</h5>
+                  <a target="_blank" href="https://www.myvi.in/international-roaming-packs">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Joint Venture</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_in-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 199 / WhatsApp number – +919654297000</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Turkey</h5>
+                  <a target="_blank" href="https://www.vodafone.com.tr/VodafoneRoaming/Yurtdisi-Rehberi">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_tu-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +90-5425-4200-00</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+
+          <h1 class="text-white text-center p-4 Top_Txt1 continent" id="label4">
+            Europe
+          </h1>
+
+          <div class="row" id="row2">
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Albania</h5>
+                  <a target="_blank" href="https://v1.vodafone.al/vodafone/Roaming_4510_1.php">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                  src="https://www.worldometers.info/img/flags/small/tn_al-flag.gif"
+                  class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">
+                    Call for prepay 140 / +35569140, postpay 149 / +35569149
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Czech Republic</h5>
+                  <a target="_blank" href="https://www.vodafone.cz/roaming/pripojeni-ze-zahranici/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                  src="https://www.worldometers.info/img/flags/small/tn_ez-flag.gif"
+                  class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +420 776 977 100</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Germany</h5>
+                  <a target="_blank" href="https://www.vodafone.de/privat/service/ausland-und-roaming.html">
+                 
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                  src="https://www.worldometers.info/img/flags/small/tn_gm-flag.gif"
+                  class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +49 172 12 172 12</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Greece</h5>
+                  <a target="_blank" href="https://www.vodafone.gr/ypostirixi/proionta/kiniti-themata-kinitis/roaming/?d=null">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_gr-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +30 6944402579</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Hungary</h5>
+                  <a target="_blank" href="https://www.vodafone.hu/szolgaltatasok/roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_hu-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +36 70 700 1270 / +36 70 700 1788</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Ireland</h5>
+                  <a target="_blank" href="https://n.vodafone.ie/roaming.html">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ei-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +35312038232</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Italy</h5>
+                  <a target="_blank" href="">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_it-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Website is temporarily down</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Netherlands</h5>
+                  <a target="_blank" href="https://www.vodafone.nl/abonnement/buitenland">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Joint Venture</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_nl-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +31 6 54 50 01 00</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Portugal</h5>
+                  <a target="_blank" href="https://www.vodafone.pt/telemoveis/roaming.html">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_po-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +351 911 691 200</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Romania</h5>
+                  <a target="_blank" href="https://www.vodafone.ro/english-summary/services-and-tariffs/living-in-romania/roaming-and-calling-abroad/index.htm">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ro-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +40 372022222</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Spain</h5>
+                  <a target="_blank" href="https://www.vodafone.es/c/particulares/es/productos-y-servicios/movil/roaming-y-llamadas-internacionales/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_sp-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +34 607 123 000</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">United Kingdom</h5>
+                  <a target="_blank" href="https://www.vodafone.co.uk/mobile/global-roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Vodafone Operating country</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_uk-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +333 3040 191</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+
+          <!-- Partner Markets Starts -->
+
+          <h1 class="text-white text-center p-4 Top_Txt1 market" id="label5">
+            Partner Markets
+          </h1>
+          <h1 class="text-white text-center p-4 Top_Txt1 continent" id="label6">
+            Europe
+          </h1>
+          <div class="row" id="row3">
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Austria</h5>
+                  <a target="_blank" href="https://www.a1.net/handys-tarife/zusatzoptionen/roaming-tarife">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_au-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +43 50 664 8 664 800</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Belgium</h5>
+                  <a target="_blank" href="https://www.proximus.be/en/id_catr_mos/personal/mobile/mobile-and-roaming-options.html">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_be-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +32 475 15 60 30</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Bosnia and Herzegovina</h5>
+                  <a target="_blank" href="https://mtel.ba/n582/Mobile/Other-services/Roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_bk-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 0800 50 000</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Bulgaria</h5>
+                  <a target="_blank" href="https://www.a1.bg/rouming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_bu-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +359 88123</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Channel Islands</h5>
+                  <a target="_blank" href="https://www.airtel-vodafone.com/discover/our-network/roaming-jersey">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Flag_of_the_Channel_Islands_1.png?20070211135023"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +447829700191</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Croatia</h5>
+                  <a target="_blank" href="https://www.a1.hr/poslovni/inozemstvo/opcije/kombinirane-medunarodne-i-roaming-opcije">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_hr-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +385 91 7125 091</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Cyprus</h5>
+                  <a target="_blank" href="https://www.cyta.com.cy/m-roaming/en">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_cy-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +357 22 880 100 , +357 22 880 132</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Denmark</h5>
+                  <a target="_blank" href="https://tdcgroup.com/en/investor-relations/announcement-list/2001/12/tdc-tdc-mobil-enters-into-international-roaming-partnership-with-voda-fone-13365833">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_da-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +45 66637680</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Estonia</h5>
+                  <a target="_blank" href="https://www.elisa.ee/et/abi/abikeskus/telefon/mobiiltelefon/valismaal-kasutamine/olen-valismaal-ja-minu-seade-ei-uhendu">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_en-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +3726600600</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Finland</h5>
+                  <a target="_blank" href="https://elisa.fi/asiakaspalvelu/aihe/matkapuhelinliittymat/ohje/reissussa/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_fi-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 0800 92055</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">France</h5>
+                  <a target="_blank" href="https://assistance.sfr.fr/tel-mobile/utilisation-param/tarifs-communiquer-depuis-etranger-mobile.html">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_fr-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +336 1000 1023</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Iceland</h5>
+                  <a target="_blank" href="https://vodafone.is/simi/utlond/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ic-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +354 599 9000</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Latvia</h5>
+                  <a target="_blank" href="https://www.tele2.lv/palidziba/ja-kaut-kas-nestrada/zvani/nevaru-nevienam-piezvanit-vai-nav-zonas-/transparent/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_lg-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +371 29560600</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Lithuania</h5>
+                  <a target="_blank" href="https://tele2.lt/privatiems/paslaugos/tarptautiniai-pokalbiai">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_lh-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +370 684 00 117</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Luxembourg</h5>
+                  <a target="_blank" href="https://www.tango.lu/en/residential/offers/mobiles/subscriptions/options-and-services/roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_lu-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +352 691 700 777</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Montenegro</h5>
+                  <a target="_blank" href="https://mtel.me/Poslovni/Mobilna/Roming/Po-zonama">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_mj-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 1600</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">North Macedonia</h5>
+                  <a target="_blank" href="https://www.a1.mk/poddrska?portletAction=openTopic&topicId=43">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_mk-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 077 1234</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Serbia (A1 Serbia)</h5>
+                  <a target="_blank" href="https://a1.rs/privatni/postpaid/roming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ri-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 0601234</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Serbia (Telekom Srbija)</h5>
+                  <a target="_blank" href="https://mts.rs/Privatni/Mobilna/Roming/mts-roming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ri-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 0800 100 100</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Slovenia</h5>
+                  <a target="_blank" href="https://www.a1.si/seznam-drzav">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_si-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 040 40 40 42</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Sweden</h5>
+                  <a target="_blank" href="https://www.tele2.se/mobilt/utland">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_sw-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +46772 25 25 25</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Switzerland</h5>
+                  <a target="_blank" href="https://www.sunrise.ch/en/residential/help/netz-und-verfuegbarkeit/roaming.html">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_sz-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +41 58 777 01 01</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Ukraine</h5>
+                  <a target="_blank" href="https://www.vodafone.ua/en/za-kordon/roaming/poslugi/rouming-jak-vdoma">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_up-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +380 500 400 111</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+          <h1 class="text-white text-center p-4 Top_Txt1 continent" id="label7">
+            North America
+          </h1>
+          <div class="row" id="row4">
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Canada</h5>
+                  <a target="_blank" href="https://www.rogers.com/customer/support/article/roam-like-home-and-roaming-support">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ca-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +1 514 734-7699</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Dominican Republic</h5>
+                  <a target="_blank" href="https://altice.com.do/personal/movil/roaming/tarifas">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_dr-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 0018 0985 965 55</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">United States</h5>
+                  <a target="_blank" href="">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Enterprise only</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_us-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">N/A</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+          <h1 class="text-white text-center p-4 Top_Txt1 continent" id="label8">
+            South America
+          </h1>
+          <div class="row" id="row5">
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Argentina</h5>
+                  <a target="_blank" href="https://conectividad.personal.com.ar/tienda/roaming/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ar-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +541151009290</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Chile</h5>
+                  <a target="_blank" href="https://www.entel.cl/roaming/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ci-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +56 2 29274025</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Peru</h5>
+                  <a target="_blank" href="https://www.entel.pe/roaming-internacional/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_pe-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +511 611 7779</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+          <h1 class="text-white text-center p-4 Top_Txt1 continent" id="label9">
+            Africa
+          </h1>
+          <div class="row" id="row6">
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Angola</h5>
+                  <a target="_blank" href="https://movicel.co.ao/roaming.html">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ao-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +244912019191</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Tunisia</h5>
+                  <a target="_blank" href="https://www.tunisietelecom.tn/Fr/Search/roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ts-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +216 71 00 1298</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+          <h1
+            class="text-white text-center p-4 Top_Txt1 continent"
+            id="label10"
+          >
+            Asia
+          </h1>
+          <div class="row" id="row7">
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Hong Kong SAR</h5>
+                  <a target="_blank" href="https://web.three.com.hk/roaming/roamingservice/index-en.html">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Flag_of_Hong_Kong.svg/300px-Flag_of_Hong_Kong.svg.png"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 1033</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Japan</h5>
+                  <a target="_blank" href="https://www.softbank.jp/mobile/service/global/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ja-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +81 92 687 0025</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Oman</h5>
+                  <a target="_blank" href="https://www.vodafone.om/roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_mu-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 1717</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Singapore</h5>
+                  <a target="_blank" href="https://www.starhub.com/personal/mobile/travel-roam/travelling-overseas.html">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_sn-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +65 6820 1633</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">South Korea</h5>
+                  <a target="_blank" href="https://www.lguplus.com/plan/roaming/support">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ks-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call 080-019-7000</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Taiwan</h5>
+                  <a target="_blank" href="https://www.fetnet.net/content/cbu/tw/roaming/index.html">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://cdn.britannica.com/62/4562-004-C04E54C5/Flag-Taiwan.jpg"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +886 936 010 888</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">UAE</h5>
+                  <a target="_blank" href="https://www.du.ae/personal/support-category?topicid=201600000002357&lang=en-US">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ae-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +971 55 5678155</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+          <h1
+            class="text-white text-center p-4 Top_Txt1 continent"
+            id="label11"
+          >
+            Oceania
+          </h1>
+          <div class="row" id="row8">
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Australia</h5>
+                  <a target="_blank" href="https://www.vodafone.com.au/plans/international-roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_as-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +61 426 320 000</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Fiji</h5>
+                  <a target="_blank" href="https://www.vodafone.com.fj/personal/price-plans/rates-price-plan/prepaid-roaming-rates">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_fj-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +679 9902123</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">French Polynesia</h5>
+                  <a target="_blank" href="">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Flag_of_French_Polynesia.svg/375px-Flag_of_French_Polynesia.svg.png"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Website is temporarily down</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Kirbati</h5>
+                  <a target="_blank" href="">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Flag_of_Kiribati.svg/383px-Flag_of_Kiribati.svg.png"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +686 74020700</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">New Zealand</h5>
+                  <a target="_blank" href="https://www.vodafone.co.nz/roaming/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_nz-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +64 9 355 2007</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Papua New Guinea</h5>
+                  <a target="_blank" href="https://vodafone.com.pg/business/products-and-solutions/mobility-solutions/voice-data-plans/roaming-bundles1">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_pp-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call (675) 81030123</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Samoa</h5>
+                  <a target="_blank" href="https://www.vodafone.com.ws/mobile/roaming/">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_ws-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +685 67788</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">The Cook Islands</h5>
+                  <a target="_blank" href="https://www.vodafone.co.ck/roaming-services">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Flag_of_the_Cook_Islands.svg/1920px-Flag_of_the_Cook_Islands.svg.png"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +682 29 680</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            
+            <!-- new card -->
+            <div class="card">
+              <div class="card-body">
+                <div style="display: flex">
+                  <h5 class="card-title">Vanuatu</h5>
+                  <a target="_blank" href="https://vodafone.com.vu/pages/roaming">
+                    <img
+                    class="card-icon"
+                    src="https://i.imgur.com/FGLzPoo.png"
+                    alt=""
+                  />
+                  </a>
+                </div>
+                <p class="VF_Txt1">Partner Market</p>
+                <div class="Lower_Half">
+                  <img
+                    src="https://www.worldometers.info/img/flags/small/tn_nh-flag.gif"
+                    class="lh1"
+                    alt=""
+                  />
+                  <p class="lh2">Call +678 7781111</p>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function SearchCountry() {
+        //DOM
+        const input = document.getElementById("filter").value.toUpperCase();
+        const cardContainer = document.getElementById("card-lists");
+        console.log(cardContainer); // Test
+
+        const cards = cardContainer.getElementsByClassName("card");
+        console.log(cards); // Test
+
+        for (let i = 0; i <= cards.length; i++) {
+          let title = cards[i].querySelector(".card-body h5.card-title");
+          console.log(title); // Test
+
+          if (title.innerText.toUpperCase().indexOf(input) > -1) {
+
+            cards[i].style.display = "";
+
+          } 
+          
+          
+          else {
+            cards[i].style.display = "none";
+
+        // when searching we remove the display
+            document.getElementById("label").style.display = "none";
+            document.getElementById("label2").style.display = "none";
+            document.getElementById("label3").style.display = "none";
+            document.getElementById("label4").style.display = "none";
+            document.getElementById("label5").style.display = "none";
+            document.getElementById("label6").style.display = "none";
+            document.getElementById("label7").style.display = "none";
+            document.getElementById("label8").style.display = "none";
+            document.getElementById("label9").style.display = "none";
+            document.getElementById("label10").style.display = "none";
+            document.getElementById("label11").style.display = "none";
+        
+        // When searching we change the margins of the rows
+            document.getElementById("row0").style.marginTop = "0rem";
+            document.getElementById("row1").style.marginTop = "0rem";
+            document.getElementById("row2").style.marginTop = "0rem";
+            document.getElementById("row3").style.marginTop = "0rem";
+            document.getElementById("row4").style.marginTop = "0rem";
+            document.getElementById("row5").style.marginTop = "0rem";
+            document.getElementById("row6").style.marginTop = "0rem";
+            document.getElementById("row7").style.marginTop = "0rem";
+            document.getElementById("row8").style.marginTop = "0rem";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
